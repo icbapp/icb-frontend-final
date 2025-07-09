@@ -8,19 +8,16 @@ const apiAdminInstance = axios.create({
 })
 
 // Optional: Add token automatically if available
-apiAdminInstance.interceptors.request.use(config => {
-  const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`
-  }
-  return config
-})
+// apiAdminInstance.interceptors.request.use(config => {
+//   const token = typeof window !== 'undefined' ? localStorage.getItem('auth_token') : null
+//   if (token) {
+//     config.headers.Authorization = `Bearer ${token}`
+//   }
+//   return config
+// })
 
 export const api = apiAdminInstance;
 
-// let apiAdminInstance = axios.create({
-//   baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://petrolpe.com/api',
-// });
 apiAdminInstance.interceptors.request.use(
   async config => {
     const token = localStorage.getItem('auth_token');
