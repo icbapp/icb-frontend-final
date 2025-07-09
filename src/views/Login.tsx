@@ -384,7 +384,7 @@ const Login = ({ mode }: { mode: Mode }) => {
                 component={Link}
                 href={getLocalizedUrl('/forgot-username', locale as Locale)}
               >
-                Forgot Username?
+                Forgot Username?000000
               </Typography>
               <Typography
                 className=''
